@@ -4,10 +4,10 @@ import Input from "@/components/ui/Input/Input";
 import CardsButton from "@/components/ui/CardsButton/CardsButton";
 import TableButton from "@/components/ui/TableButton/TebleButton";
 import { useModalStore } from "@/app/store/store";
+
 interface OnTableBarProps {
   searchQuery: string;
   setSearchQuery: (e: string) => void;
-  //   openModal: () => void;
   isActive: boolean;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
@@ -25,8 +25,8 @@ const OnTableBar = ({
     openModal("addProduct");
   };
   return (
-    <div className="flex px-2 py-4 justify-between items-center">
-      <div className="w-60">
+    <div className="flex py-3 justify-between items-center bg-gray-100 rounded-md shadow-sm">
+      <div className="w-64">
         <Input
           type="text"
           value={searchQuery}
@@ -37,11 +37,18 @@ const OnTableBar = ({
         />
       </div>
       <div className="flex justify-between gap-4">
-        <div className="w-[100px] flex justify-between">
+        <div className="w-[120px] flex">
           <TableButton isActive={isActive} onClick={onClick} />
           <CardsButton isActive={!isActive} onClick={onClick} />
         </div>
-        {user?.roles.length === 2 && <button onClick={handleOpenModal}>Добавить</button>}
+        {user?.roles.length === 2 && (
+          <button
+            onClick={handleOpenModal}
+            className="px-4 py-2 rounded-md font-medium text-base transition duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400"
+          >
+            Добавить
+          </button>
+        )}
       </div>
     </div>
   );

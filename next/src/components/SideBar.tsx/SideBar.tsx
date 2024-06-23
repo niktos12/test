@@ -4,10 +4,11 @@ import { Logo } from "@/components/ui/Logo/Logo";
 import { Menu } from "@/components/ui/Menu/Menu";
 import { User } from "../ui/User/User";
 import { useAuth } from "@/app/hooks/useAuth";
+
 const Sidebar = () => {
   const { user } = useAuth();
   return (
-    <div className="h-screen w-56 bg-slate-100 flex flex-col justify-between">
+    <div className="h-screen w-64 bg-white flex flex-col justify-between">
       <>
         <Logo />
         <Menu />

@@ -34,38 +34,39 @@ const Form = () => {
   return (
     <>
       <form
-        className="bg-slate-200 px-8 py-7 rounded-[10px] shadow-md w-[360px] flex flex-col gap-10"
+        className="bg-gray-100 px-8 py-7 rounded-[12px] shadow-lg w-[380px] flex flex-col gap-8"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-medium text-center text-zinc-900">
+        <h2 className="text-2xl font-semibold text-center text-gray-800">
           Авторизация
         </h2>
-        <div className="flex flex-col gap-9 pt-8 pb-[10px]">
+        <div className="flex flex-col gap-8 pt-6 pb-4">
           <div className="flex flex-col gap-1">
-            <label className="block text-sm text text-zinc-900">Почта</label>
+            <label className="block text-sm text-gray-800">Почта</label>
             <input
               placeholder="Почта"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              className="bg-[#C9CFD8] placeholder:text-[#888F99] text-sm text-zinc-900 pl-[10px] py-[6px] block w-full rounded-md border 
-                    focus:border-[#C9CFD8] focus:bg-transparent outline-none"
+              className="bg-gray-200 placeholder:text-gray-600 text-sm text-gray-800 pl-4 py-2 block w-full rounded-md border 
+                    focus:border-gray-300 focus:bg-transparent outline-none"
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label className="block text-sm text text-zinc-900">Пароль</label>
+            <label className="block text-sm text-gray-800">Пароль</label>
             <input
               placeholder="Пароль"
               onChange={(e) => setPassword(e.target.value)}
+              type="password"
               value={password}
-              className="bg-[#C9CFD8] placeholder:text-[#888F99] text-sm text-zinc-900 pl-[10px] py-[6px] block w-full rounded-md border 
-                    focus:border-[#C9CFD8] focus:bg-transparent outline-none"
+              className="bg-gray-200 placeholder:text-gray-600 text-sm text-gray-800 pl-4 py-2 block w-full rounded-md border 
+                    focus:border-gray-300 focus:bg-transparent outline-none"
             />
           </div>
         </div>
         <div className="block mx-auto">
           <button
             type="submit"
-            className="px-6 py-2 rounded-md font-medium text-base transition duration-200 bg-slate-300 text-zinc-900 hover:bg-slate-400"
+            className="px-6 py-2 rounded-md font-medium text-base transition duration-200 bg-gray-300 text-gray-800 hover:bg-gray-400"
           >
             Войти
           </button>

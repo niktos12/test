@@ -24,7 +24,8 @@ const Input = ({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
-        className="bg-gray-900 bg-opacity-[0.12] placeholder:text-gray-900 placeholder:text-opacity-40 text-sm text-zinc-900 pl-[10px] py-[6px] block w-full rounded-md border focus:border-[#C9CFD8] focus:bg-transparent outline-none"
+        className="bg-gray-900 bg-opacity-[0.12] placeholder:text-gray-900 placeholder:text-opacity-40 
+        text-sm text-zinc-900 pl-[10px] py-[6px] block w-full rounded-md border focus:border-[#C9CFD8] focus:bg-transparent outline-none"
       />
     </div>
   );

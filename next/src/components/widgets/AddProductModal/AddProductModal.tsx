@@ -22,7 +22,7 @@ const AddProduct = ({
   const [file, setFile] = useState<Blob | null>(null);
   const [isImage, setIsImage] = useState<boolean>(false);
   const inputFileRef = useRef<HTMLInputElement | null>(null);
-  const { modals , closeModal } = useModalStore();
+  const { modals, closeModal } = useModalStore();
 
   const {
     register,
@@ -64,14 +64,18 @@ const AddProduct = ({
       setFileName(null);
       setFile(null);
       setIsImage(false);
-      closeModal('addProduct')
+      closeModal("addProduct");
     } catch {
       alert("Не удалось добавить товар");
     }
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div
+      className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ${
+        isOpen ? "" : "hidden"
+      }`}
+    >
       <div className="w-[338px] px-2 py-4 rounded-lg bg-slate-100 flex flex-col gap-5">
         <h2 className="text-slate-900 text-2xl font-medium text-center">
           Создание товара
