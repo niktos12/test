@@ -62,16 +62,12 @@ export const updateProduct = async (
   const token = localStorage.getItem("token");
   if (!token) throw new Error("No token available");
 
-  console.log("Updating product with data:", data); // Добавьте этот лог
-
   await axios.patch(`http://localhost:3002/products/${id}`, data, {
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
     },
   });
-
-  console.log("Product updated, mutating cache with query:", query); // Добавьте этот лог
 
   mutate(`http://localhost:3002/products?${query}`);
 };
